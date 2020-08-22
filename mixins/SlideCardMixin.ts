@@ -12,9 +12,15 @@ export default Vue.extend({
       type: String,
       default: '',
     } as PropOptions<string>,
+
     movies: {
       type: Array,
       default: () => [],
     } as PropOptions<Array<Movie>>,
+
+    loading: {
+      type: Boolean,
+      default: true,
+    } as PropOptions<boolean>,
   },
 })

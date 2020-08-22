@@ -7,19 +7,29 @@
     />
     <div class="p-5 m-auto md:container md:px-0 sm:p-10">
       <!-- Movies -->
-      <EminentSlider title="Movies"></EminentSlider>
+      <EminentSlider title="Movies" :loading="loading"></EminentSlider>
       <!-- Series -->
-      <EminentSlider title="Series" class="mt-24"></EminentSlider>
+      <EminentSlider
+        title="Series"
+        :loading="loading"
+        class="mt-24"
+      ></EminentSlider>
       <!-- Episodes -->
-      <EminentSlider title="Episodes" class="mt-24"></EminentSlider>
+      <EminentSlider
+        title="Episodes"
+        :loading="loading"
+        class="mt-24"
+      ></EminentSlider>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import LoaderMixin from '@/mixins/LoaderMixin'
 
 export default Vue.extend({
   name: 'SearchResults',
+  mixins: [LoaderMixin],
 })
 </script>

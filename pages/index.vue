@@ -7,18 +7,22 @@
     />
     <div class="p-5 m-auto md:container md:px-0 sm:p-10">
       <!-- New Releases -->
-      <EminentSlider title="New releases"></EminentSlider>
+      <EminentSlider title="New releases" :loading="loading"></EminentSlider>
 
       <!-- Trending -->
-      <Slider title="Trending" class="mt-24"></Slider>
+      <Slider title="Trending" :loading="loading" class="mt-24"></Slider>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import LoaderMixin from '@/mixins/LoaderMixin'
 
-export default Vue.extend({})
+export default Vue.extend({
+  name: 'Home',
+  mixins: [LoaderMixin],
+})
 </script>
 
 <style>
