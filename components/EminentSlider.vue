@@ -33,17 +33,16 @@
               class="object-fill object-center w-full h-full"
             />
             <div
-              class="absolute bottom-0 left-0 right-0 flex justify-between px-5 py-2 bg-black-variant text-gray-variant2"
+              class="absolute bottom-0 left-0 right-0 px-2 py-2 sm:px-5 bg-black-variant text-gray-variant2"
             >
-              <div>
-                <h3 class="truncate">{{ movie.Title }}</h3>
-                <div class="mt-2">
-                  <h4>{{ movie.imdbID }}</h4>
+              <h3 class="truncate">{{ movie.Title }}</h3>
+
+              <div class="mt-2">
+                <h4>{{ movie.imdbID }}</h4>
+                <div class="flex items-center justify-between">
                   <h4>{{ movie.Year }}</h4>
+                  <img src="star5.png" />
                 </div>
-              </div>
-              <div>
-                <img src="star5.png" />
               </div>
             </div>
           </n-link>

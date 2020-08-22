@@ -27,7 +27,7 @@
               style="width: 200px;"
             />
             <div
-              class="absolute top-0 left-0 right-0 px-5 py-2 bg-black-variant text-gray-variant2"
+              class="absolute top-0 left-0 right-0 px-2 py-2 sm:px-5 bg-black-variant text-gray-variant2"
             >
               <img src="star5.png" class="ml-auto" />
             </div>
