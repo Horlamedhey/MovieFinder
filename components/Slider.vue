@@ -34,7 +34,7 @@
             <div
               class="absolute bottom-0 left-0 right-0 px-5 py-2 text-center bg-black-variant text-gray-variant2"
             >
-              <h4>{{ movie.Title }}</h4>
+              <h4 class="truncate">{{ movie.Title }}</h4>
               <div class="mt-2">
                 <p class="font-bold">{{ movie.imdbID }}</p>
                 <p class="font-bold">{{ movie.Year }}</p>

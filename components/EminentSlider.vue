@@ -36,7 +36,7 @@
               class="absolute bottom-0 left-0 right-0 flex justify-between px-5 py-2 bg-black-variant text-gray-variant2"
             >
               <div>
-                <h3>{{ movie.Title }}</h3>
+                <h3 class="truncate">{{ movie.Title }}</h3>
                 <div class="mt-2">
                   <h4>{{ movie.imdbID }}</h4>
                   <h4>{{ movie.Year }}</h4>
