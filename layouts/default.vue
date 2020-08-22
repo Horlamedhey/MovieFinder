@@ -5,11 +5,15 @@
       <Nuxt />
     </div>
     <footer
-      class="absolute bottom-0 flex flex-wrap justify-around w-full p-4 space-y-3 text-center bg-white border-t sm:space-y-0 sm:flex-no-wrap border-grey"
+      class="absolute bottom-0 flex flex-wrap items-center justify-around w-full p-4 space-y-3 text-center bg-white border-t sm:space-y-0 sm:flex-no-wrap border-grey"
     >
-      <div>© {{ new Date().getFullYear() }} Variable - All Rights Reserved</div>
+      <div class="w-full sm:w-auto">
+        © {{ new Date().getFullYear() }} Variable - All Rights Reserved
+      </div>
 
-      <div class="flex items-center space-x-4 text-primary">
+      <div
+        class="flex items-center justify-center w-full space-x-4 sm:w-auto text-primary"
+      >
         <a
           href="https://github.com/horlamedhey"
           target="_blank"
