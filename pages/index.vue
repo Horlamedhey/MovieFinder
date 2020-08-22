@@ -7,22 +7,51 @@
     />
     <div class="p-5 m-auto md:container md:px-0 sm:p-10">
       <!-- New Releases -->
-      <EminentSlider title="New releases" :loading="loading"></EminentSlider>
+      <EminentSlider
+        title="Featured movies"
+        :movies="movies"
+        :loading="loading"
+      ></EminentSlider>
 
       <!-- Trending -->
-      <Slider title="Trending" :loading="loading" class="mt-24"></Slider>
+      <Slider
+        title="New series"
+        :movies="series"
+        :loading="loading"
+        class="mt-24"
+      ></Slider>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import LoaderMixin from '@/mixins/LoaderMixin'
 
-export default Vue.extend({
+export default {
   name: 'Home',
   mixins: [LoaderMixin],
-})
+  data() {
+    return {
+      series: [],
+      movies: [],
+    }
+  },
+  mounted() {
+    this.$axios
+      .$get('http://www.omdbapi.com/?apikey=f6084cd4&s=all&y=2020&type=series')
+      .then((series) => {
+        this.series = series.Search
+      })
+      .then(() => {
+        this.$axios
+          .$get('http://www.omdbapi.com/?apikey=f6084cd4&s=bet&type=movie')
+          .then((movies) => {
+            this.movies = movies.Search
+            this.loading = false
+          })
+      })
+  },
+}
 </script>
 
 <style>

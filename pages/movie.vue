@@ -10,11 +10,11 @@
         <MoviePlaceholder></MoviePlaceholder>
       </template>
       <template v-else>
-        <h1>The One and Only Ivan 2020</h1>
+        <h1>{{ movie.Title }}</h1>
         <div class="w-full sm:w-9/12 md:w-1/2 xl:w-4/12">
           <img
-            src="movie.jpg"
-            class="w-full mt-3 rounded-lg shadow-lg"
+            :src="movie.Poster !== 'N/A' ? movie.Poster : 'logo.png'"
+            class="object-fill object-center w-full mt-3 rounded-lg shadow-lg"
             style="height: 350px;"
           />
           <div class="flex flex-wrap-reverse mt-6 sm:flex-no-wrap">
@@ -22,20 +22,16 @@
               class="w-full mt-2 text-sm sm:mt-0 sm:w-8/12"
               style="color: #343434;"
             >
-              A gorilla named Ivan tries to pierce together his past with the
-              help of an elephant named Stella as they hatch a plan to escape
-              from captivity.
+              {{ movie.Plot }}
             </p>
             <div class="w-full sm:w-4/12">
-              <img src="star5.png" class="sm:ml-auto" />
+              <img :src="`star${movie.Rating}.png`" class="sm:ml-auto" />
             </div>
           </div>
           <ul class="mt-4">
-            <li>Duration: 1hr 30mins</li>
-            <li>Genre: Animation, Adventure, Comedy</li>
-            <li>Director: Angelina Jolie</li>
-            <li>Cast: Angelina Jolie, Bryan Cranston, Sam Rockwell....</li>
-            <li>Year: 2020</li>
+            <li v-for="(detail, key) in movie.details" :key="key">
+              {{ key }}: {{ detail }}
+            </li>
           </ul>
         </div>
       </template>
@@ -43,12 +39,44 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import LoaderMixin from '@/mixins/LoaderMixin'
 
-export default Vue.extend({
+export default {
   name: 'Movie',
   mixins: [LoaderMixin],
-})
+  data() {
+    return {
+      movie: {},
+    }
+  },
+  mounted() {
+    this.$axios
+      .$get(
+        `http://www.omdbapi.com/?apikey=f6084cd4&t=${this.$route.query.title}`
+      )
+      .then((movie) => {
+        console.log(movie)
+        const {
+          Title,
+          Poster,
+          Plot,
+          imdbRating: Rating,
+          Runtime: Duration,
+          Genre,
+          Director,
+          Actors,
+          Year,
+        } = movie
+        this.movie = {
+          Title,
+          Poster,
+          Plot,
+          Rating: Math.round(Rating / 2),
+          details: { Duration, Genre, Director, Actors, Year },
+        }
+        this.loading = false
+      })
+  },
+}
 </script>

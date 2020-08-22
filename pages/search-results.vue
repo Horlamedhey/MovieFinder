@@ -7,29 +7,78 @@
     />
     <div class="p-5 m-auto md:container md:px-0 sm:p-10">
       <!-- Movies -->
-      <EminentSlider title="Movies" :loading="loading"></EminentSlider>
+      <EminentSlider
+        title="Movies"
+        :loading="loading"
+        :movies="movies"
+      ></EminentSlider>
       <!-- Series -->
       <EminentSlider
         title="Series"
         :loading="loading"
+        :movies="series"
         class="mt-24"
       ></EminentSlider>
       <!-- Episodes -->
       <EminentSlider
         title="Episodes"
         :loading="loading"
+        :movies="episodes"
         class="mt-24"
       ></EminentSlider>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import LoaderMixin from '@/mixins/LoaderMixin'
 
-export default Vue.extend({
+export default {
   name: 'SearchResults',
   mixins: [LoaderMixin],
-})
+  data() {
+    return {
+      movies: [],
+      series: [],
+      episodes: [],
+    }
+  },
+  watch: {
+    '$route.query.title'(val) {
+      this.loading = true
+      this.fetchMovies(val)
+    },
+  },
+  mounted() {
+    this.fetchMovies(this.$route.query.title)
+  },
+  methods: {
+    fetchMovies(keyword) {
+      this.$axios
+        .$get(`http://www.omdbapi.com/?apikey=f6084cd4&s=${keyword}&type=movie`)
+        .then((movies) => {
+          this.movies = movies.Search
+        })
+        .then(() => {
+          this.$axios
+            .$get(
+              `http://www.omdbapi.com/?apikey=f6084cd4&s=${keyword}&type=series`
+            )
+            .then((series) => {
+              this.series = series.Search
+            })
+            .then(() => {
+              this.$axios
+                .$get(
+                  `http://www.omdbapi.com/?apikey=f6084cd4&s=${keyword}&type=episode`
+                )
+                .then((episodes) => {
+                  this.episodes = episodes.Search
+                  this.loading = false
+                })
+            })
+        })
+    },
+  },
+}
 </script>

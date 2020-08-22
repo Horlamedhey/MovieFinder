@@ -10,26 +10,37 @@
       </template>
       <template v-else>
         <div
-          v-for="n in 10"
-          :key="n"
+          v-for="movie in movies"
+          :key="movie.imdbID"
           class="relative overflow-hidden rounded-lg shadow-lg"
           style="flex: 0 0 auto;"
         >
-          <img src="movie.jpg" style="height: 250px; width: 200px;" />
-          <div
-            class="absolute top-0 left-0 right-0 px-5 py-2 bg-black-variant text-gray-variant2"
+          <n-link
+            :to="{
+              path: '/movie',
+              query: { title: movie.Title },
+            }"
           >
-            <img src="star5.png" class="ml-auto" />
-          </div>
-          <div
-            class="absolute bottom-0 left-0 right-0 px-5 py-2 text-center bg-black-variant text-gray-variant2"
-          >
-            <h4>Vampire</h4>
-            <div class="mt-2">
-              <p>Directed by Shunji Iwai</p>
-              <p>2020</p>
+            <img
+              :src="movie.Poster !== 'N/A' ? movie.Poster : 'logo.png'"
+              class="object-contain object-center h-full"
+              style="width: 200px;"
+            />
+            <div
+              class="absolute top-0 left-0 right-0 px-5 py-2 bg-black-variant text-gray-variant2"
+            >
+              <img src="star5.png" class="ml-auto" />
             </div>
-          </div>
+            <div
+              class="absolute bottom-0 left-0 right-0 px-5 py-2 text-center bg-black-variant text-gray-variant2"
+            >
+              <h4>{{ movie.Title }}</h4>
+              <div class="mt-2">
+                <p class="font-bold">{{ movie.imdbID }}</p>
+                <p class="font-bold">{{ movie.Year }}</p>
+              </div>
+            </div>
+          </n-link>
         </div>
       </template>
     </div>

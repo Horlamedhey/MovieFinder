@@ -1,10 +1,10 @@
 import Vue, { PropOptions } from 'vue'
 interface Movie {
-  image: String
-  title: String
-  director: String
-  year: String
-  rating: Number
+  Poster: String
+  Title: String
+  Type: String
+  Year: String
+  imdbID: Number
 }
 export default Vue.extend({
   props: {
