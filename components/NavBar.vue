@@ -9,7 +9,7 @@
       class="duration-300"
       style="transition-property: width;"
     >
-      <img src="/logo.png" width="200px" />
+      <img src="logo.png" width="200px" />
     </n-link>
     <div
       class="flex justify-center px-5 py-2 duration-300 bg-gray-200 border rounded-full sm:w-7/12 border-gray-variant"
