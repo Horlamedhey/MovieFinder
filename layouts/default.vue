@@ -5,7 +5,7 @@
       <Nuxt />
     </div>
     <footer
-      class="absolute bottom-0 flex justify-around w-full p-4 text-center bg-white border-t border-grey"
+      class="absolute bottom-0 flex flex-wrap justify-around w-full p-4 space-y-3 text-center bg-white border-t sm:space-y-0 sm:flex-no-wrap border-grey"
     >
       <div>© {{ new Date().getFullYear() }} Variable - All Rights Reserved</div>
 

@@ -25,8 +25,8 @@
         class="w-11/12 bg-transparent focus:outline-none text-gray-variant1"
       />
       <button
-        class="block ml-auto focus:outline-none sm:hidden"
-        @click="expandAndSearch"
+        class="ml-auto focus:outline-none sm:hidden"
+        @click="expandAndSearch(false)"
       >
         <SearchIcon />
       </button>
