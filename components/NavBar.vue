@@ -30,7 +30,10 @@
       >
         <SearchIcon />
       </button>
-      <button class="hidden ml-auto focus:outline-none sm:block">
+      <button
+        class="hidden ml-auto focus:outline-none sm:block"
+        @click="expandAndSearch(true)"
+      >
         <SearchIcon />
       </button>
     </div>
@@ -49,8 +52,8 @@ export default Vue.extend({
     }
   },
   methods: {
-    expandAndSearch() {
-      if (this.expanded) {
+    expandAndSearch(bigScreen) {
+      if (this.expanded || bigScreen) {
         if (this.keyword.length > 0) {
           this.$router.push({
             path: '/search-results',

@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div class="relative min-h-screen">
     <NavBar />
-    <Nuxt />
+    <div class="pb-32">
+      <Nuxt />
+    </div>
     <footer
-      class="flex justify-around w-full p-4 text-center bg-white border-t border-grey"
+      class="absolute bottom-0 flex justify-around w-full p-4 text-center bg-white border-t border-grey"
     >
       <div>© {{ new Date().getFullYear() }} Variable - All Rights Reserved</div>
 
