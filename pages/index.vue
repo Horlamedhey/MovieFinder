@@ -38,13 +38,13 @@ export default {
   },
   mounted() {
     this.$axios
-      .$get('http://www.omdbapi.com/?apikey=f6084cd4&s=all&y=2020&type=series')
+      .$get('https://www.omdbapi.com/?apikey=f6084cd4&s=all&y=2020&type=series')
       .then((series) => {
         this.series = series.Search
       })
       .then(() => {
         this.$axios
-          .$get('http://www.omdbapi.com/?apikey=f6084cd4&s=bet&type=movie')
+          .$get('https://www.omdbapi.com/?apikey=f6084cd4&s=bet&type=movie')
           .then((movies) => {
             this.movies = movies.Search
             this.loading = false

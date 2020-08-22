@@ -53,7 +53,7 @@ export default {
   mounted() {
     this.$axios
       .$get(
-        `http://www.omdbapi.com/?apikey=f6084cd4&t=${this.$route.query.title}`
+        `https://www.omdbapi.com/?apikey=f6084cd4&t=${this.$route.query.title}`
       )
       .then((movie) => {
         console.log(movie)

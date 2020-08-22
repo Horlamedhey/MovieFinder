@@ -55,14 +55,16 @@ export default {
   methods: {
     fetchMovies(keyword) {
       this.$axios
-        .$get(`http://www.omdbapi.com/?apikey=f6084cd4&s=${keyword}&type=movie`)
+        .$get(
+          `https://www.omdbapi.com/?apikey=f6084cd4&s=${keyword}&type=movie`
+        )
         .then((movies) => {
           this.movies = movies.Search
         })
         .then(() => {
           this.$axios
             .$get(
-              `http://www.omdbapi.com/?apikey=f6084cd4&s=${keyword}&type=series`
+              `https://www.omdbapi.com/?apikey=f6084cd4&s=${keyword}&type=series`
             )
             .then((series) => {
               this.series = series.Search
@@ -70,7 +72,7 @@ export default {
             .then(() => {
               this.$axios
                 .$get(
-                  `http://www.omdbapi.com/?apikey=f6084cd4&s=${keyword}&type=episode`
+                  `https://www.omdbapi.com/?apikey=f6084cd4&s=${keyword}&type=episode`
                 )
                 .then((episodes) => {
                   this.episodes = episodes.Search
