@@ -3,7 +3,7 @@
     <NavBar />
     <Nuxt />
     <footer
-      class="flex justify-around w-full p-4 text-center border-t border-grey"
+      class="flex justify-around w-full p-4 text-center bg-white border-t border-grey"
     >
       <div>© {{ new Date().getFullYear() }} Variable - All Rights Reserved</div>
 
