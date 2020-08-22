@@ -52,7 +52,7 @@ export default Vue.extend({
     }
   },
   methods: {
-    expandAndSearch(bigScreen) {
+    expandAndSearch(bigScreen: Boolean) {
       if (this.expanded || bigScreen) {
         if (this.keyword.length > 0) {
           this.$router.push({
