@@ -1,5 +1,6 @@
 {
   "name": "MovieFinder",
+  "description": "A web app to search for movies by title",
   "version": "1.0.0",
   "private": true,
   "scripts": {
