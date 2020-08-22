@@ -9,13 +9,42 @@
     >
       <div>© {{ new Date().getFullYear() }} Variable - All Rights Reserved</div>
 
-      <div>
-        <div class="flex space-x-4 text-primary">
-          <TwitterIcon class="w-5 h-5"></TwitterIcon>
-          <LinkedinIcon class="w-5 h-5"></LinkedinIcon>
+      <div class="flex items-center space-x-4 text-primary">
+        <a
+          href="https://github.com/horlamedhey"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <GithubIcon class="w-5 h-5"></GithubIcon>
+        </a>
+        <a
+          href="https://gitlab.com/horlamedhey"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <GitlabIcon class="w-5 h-5"></GitlabIcon>
-        </div>
+        </a>
+        <a
+          href="hhttps://stackoverflow.com/users/10773017/abdulgafar-ajao"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <StackoverflowIcon></StackoverflowIcon>
+        </a>
+        <a
+          href="https://twitter.com/horlamedhey"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <TwitterIcon class="w-5 h-5"></TwitterIcon>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/abdulgafar-ajao-21399215b"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LinkedinIcon class="w-5 h-5"></LinkedinIcon>
+        </a>
       </div>
     </footer>
   </div>
