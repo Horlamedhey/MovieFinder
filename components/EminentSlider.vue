@@ -30,7 +30,7 @@
           >
             <img
               :src="movie.Poster !== 'N/A' ? movie.Poster : 'logo.png'"
-              class="object-fill object-center w-full h-full"
+              class="object-cover object-center w-full h-full"
             />
             <div
               class="absolute bottom-0 left-0 right-0 px-2 py-2 sm:px-5 bg-black-variant text-gray-variant2"

@@ -23,7 +23,7 @@
           >
             <img
               :src="movie.Poster !== 'N/A' ? movie.Poster : 'logo.png'"
-              class="object-contain object-center h-full"
+              class="object-cover object-center h-full"
               style="width: 200px;"
             />
             <div

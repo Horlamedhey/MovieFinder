@@ -12,11 +12,12 @@
       <template v-else>
         <h1>{{ movie.Title }}</h1>
         <div class="w-full sm:w-9/12 md:w-1/2 xl:w-4/12">
-          <img
-            :src="movie.Poster !== 'N/A' ? movie.Poster : 'logo.png'"
-            class="object-fill object-center w-full mt-3 rounded-lg shadow-lg"
-            style="height: 350px;"
-          />
+          <div class="w-full" style="height: 350px;">
+            <img
+              :src="movie.Poster !== 'N/A' ? movie.Poster : 'logo.png'"
+              class="object-cover object-center w-full h-full mt-3 rounded-lg shadow-lg"
+            />
+          </div>
           <div class="flex flex-wrap-reverse mt-6 sm:flex-no-wrap">
             <p
               class="w-full mt-2 text-sm sm:mt-0 sm:w-8/12"
