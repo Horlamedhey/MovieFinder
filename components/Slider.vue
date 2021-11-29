@@ -3,7 +3,7 @@
     <h2 class="underline">{{ title }}</h2>
     <div
       class="flex flex-no-wrap mt-6 space-x-4 overflow-x-auto"
-      style="-webkit-overflow-scrolling: touch;"
+      style="-webkit-overflow-scrolling: touch"
     >
       <template v-if="loading">
         <SlidePlaceholder v-for="n in 10" :key="n"></SlidePlaceholder>
@@ -13,7 +13,7 @@
           v-for="movie in movies"
           :key="movie.imdbID"
           class="relative overflow-hidden rounded-lg shadow-lg"
-          style="flex: 0 0 auto;"
+          style="flex: 0 0 auto"
         >
           <n-link
             :to="{
@@ -24,15 +24,35 @@
             <img
               :src="movie.Poster !== 'N/A' ? movie.Poster : 'logo.png'"
               class="object-cover object-center h-full"
-              style="width: 200px;"
+              style="width: 200px"
             />
             <div
-              class="absolute top-0 left-0 right-0 px-2 py-2 sm:px-5 bg-black-variant text-gray-variant2"
+              class="
+                absolute
+                top-0
+                left-0
+                right-0
+                px-2
+                py-2
+                bg-black bg-opacity-75
+                sm:px-5
+                text-gray-variant2
+              "
             >
               <img src="star5.png" class="ml-auto" />
             </div>
             <div
-              class="absolute bottom-0 left-0 right-0 px-5 py-2 text-center bg-black-variant text-gray-variant2"
+              class="
+                absolute
+                bottom-0
+                left-0
+                right-0
+                px-5
+                py-2
+                text-center
+                bg-black bg-opacity-75
+                text-gray-variant2
+              "
             >
               <h4 class="truncate">{{ movie.Title }}</h4>
               <div class="mt-2">

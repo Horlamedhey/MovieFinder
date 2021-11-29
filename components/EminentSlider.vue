@@ -4,7 +4,7 @@
 
     <div
       class="flex flex-no-wrap mt-6 space-x-4 overflow-x-auto"
-      style="-webkit-overflow-scrolling: touch;"
+      style="-webkit-overflow-scrolling: touch"
     >
       <template v-if="loading">
         <EminentSlidePlaceholder
@@ -19,8 +19,19 @@
         <div
           v-for="movie in movies"
           :key="movie.imdbID"
-          class="relative w-11/12 h-64 overflow-hidden rounded-lg shadow-lg sm:w-7/12 md:w-5/12 lg:w-4/12 xl:w-3/12"
-          style="flex: 0 0 auto;"
+          class="
+            relative
+            w-11/12
+            h-64
+            overflow-hidden
+            rounded-lg
+            shadow-lg
+            sm:w-7/12
+            md:w-5/12
+            lg:w-4/12
+            xl:w-3/12
+          "
+          style="flex: 0 0 auto"
         >
           <n-link
             :to="{
@@ -33,7 +44,17 @@
               class="object-cover object-center w-full h-full"
             />
             <div
-              class="absolute bottom-0 left-0 right-0 px-2 py-2 sm:px-5 bg-black-variant text-gray-variant2"
+              class="
+                absolute
+                bottom-0
+                left-0
+                right-0
+                px-2
+                py-2
+                bg-black bg-opacity-75
+                sm:px-5
+                text-gray-variant2
+              "
             >
               <h3 class="truncate">{{ movie.Title }}</h3>
 
