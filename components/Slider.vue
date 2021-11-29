@@ -39,7 +39,7 @@
                 text-gray-variant2
               "
             >
-              <img src="star5.png" class="ml-auto" />
+              <img src="star5.png" class="mx-auto" />
             </div>
             <div
               class="
